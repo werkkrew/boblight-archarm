@@ -6,6 +6,9 @@
 #How far into the screen should it look
 depth=13
 
+echo -n "What is the device name? "
+read devicename
+
 echo -n "How many lights on the Left side? "
 read left
 
