@@ -1,4 +1,4 @@
-Boblight for Arch Linux ARM/ Raspberry Pi
+Boblight for Arch Linux ARM / Raspberry Pi
 ================
 
 Overview
