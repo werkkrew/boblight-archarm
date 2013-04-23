@@ -12,6 +12,8 @@ Added some additional optimizations from [Speedy1985's Boblight repository](http
 
 I have also fixed a few other V4L related bugs as reported on the [boblight issues list](https://code.google.com/p/boblight/issues/detail?id=49).
 
+Integrated makeboblight.sh configuration helper script as per [enchancement issue 24](https://code.google.com/p/boblight/issues/detail?id=24)
+
 Installing
 ----------
 
