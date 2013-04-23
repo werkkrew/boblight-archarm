@@ -6,7 +6,9 @@ Overview
 
 This is my personal edit of the original boblight software which can be found at: https://code.google.com/p/boblight/
 
-I updated the v4l client code to work with the newer ffmpeg libraries provided in Arch Linux.
+I updated the v4l client code to work with the newer ffmpeg (>0.8) libraries provided in Arch Linux.
+
+Added some additional optimizations from [Speedy1985's Boblight repository](https://github.com/Speedy1985/boblightd-for-raspberry).
 
 Installing
 ----------
