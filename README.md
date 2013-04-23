@@ -8,7 +8,9 @@ This is my personal edit of the original boblight software which can be found at
 
 I updated the v4l client code to work with the newer ffmpeg (>0.8) libraries provided in Arch Linux.
 
-Added some additional optimizations from [Speedy1985's Boblight repository](https://github.com/Speedy1985/boblightd-for-raspberry).
+Added some additional optimizations from [Speedy1985's Boblight repository](https://github.com/Speedy1985/boblightd-for-raspberry).  This code means that using the standard boblight.conf will no longer work and you must use 3 character naming for lights as per the example boblight.conf inlcuded here.
+
+I have also fixed a few other V4L related bugs as reported on the [boblight issues list](https://code.google.com/p/boblight/issues/detail?id=49).
 
 Installing
 ----------

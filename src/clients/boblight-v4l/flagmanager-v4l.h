@@ -1,6 +1,13 @@
 /*
  * boblight
  * Copyright (C) Bob  2009 
+ * --------------------------
+ * Modified by werkkrew (Bryan Chain) to add compatibility with newer
+ * versions of ffmpeg.
+ *
+ * Fixes deal with deprecation of AVFormatParams for AVDictionary
+ * as well as a fix dealing with the old hard-coded video framerate.
+ * --------------------------
  * 
  * boblight is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -34,6 +41,7 @@ class CFlagManagerV4l : public CFlagManager
     std::string m_device;
     const char* m_standard;
     int         m_channel;
+    int		m_framerate;
     bool        m_checksignal;
 
     int         m_width;

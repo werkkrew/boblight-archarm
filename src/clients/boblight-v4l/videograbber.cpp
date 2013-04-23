@@ -1,8 +1,13 @@
 /*
  * boblight
  * Copyright (C) Bob  2009 
+ * --------------------------
  * Modified by werkkrew (Bryan Chain) to add compatibility with newer
  * versions of ffmpeg.
+ *
+ * Fixes deal with deprecation of AVFormatParams for AVDictionary 
+ * as well as a fix dealing with the old hard-coded video framerate.
+ * --------------------------
  * 
  * boblight is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -72,12 +77,14 @@ void CVideoGrabber::Setup()
   AVInputFormat* inputformat;
 
   memset(&m_formatparams, 0, sizeof(m_formatparams));
-  //Added by Bryan Chain to fix deprecation of AVFormatParams for AVDictionary 
   char buf[1024];
   AVDictionary *m_formatparams = NULL;
-  
-  snprintf(buf, sizeof(buf), "%d/%d", 60, 1);
-  av_dict_set(&m_formatparams, "framerate", buf, 0);
+ 
+  if(g_flagmanager.m_framerate!=NULL){
+	printf("Framerate was set: %d\n",g_flagmanager.m_framerate); 
+  	snprintf(buf, sizeof(buf), "%d/%d", g_flagmanager.m_framerate, 1);
+  	av_dict_set(&m_formatparams, "framerate", buf, 0);
+  }
   
   snprintf(buf, sizeof(buf), "%d", g_flagmanager.m_channel);
   av_dict_set(&m_formatparams, "channel", buf, 0);
