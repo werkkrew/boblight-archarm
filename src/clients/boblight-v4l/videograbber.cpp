@@ -1,6 +1,8 @@
 /*
  * boblight
  * Copyright (C) Bob  2009 
+ * Modified by werkkrew (Bryan Chain) to add compatibility with newer
+ * versions of ffmpeg.
  * 
  * boblight is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
