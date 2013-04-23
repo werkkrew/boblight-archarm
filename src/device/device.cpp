@@ -1,6 +1,7 @@
 /*
  * boblight
  * Copyright (C) Bob  2009 
+ * Modded by Heven (ihad forum) And Speedy1985
  * 
  * boblight is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -83,8 +84,16 @@ float CChannel::GetValue(int64_t time)
     m_currentvalue += diff * m_singlechange;
   }
 
-  m_currentvalue = Clamp(m_currentvalue, 0.0, 1.0);
-
+  //m_currentvalue = Clamp(m_currentvalue, 0.0, 1.0);
+  if(m_currentvalue < 0.0f)
+  {
+    m_currentvalue = 0.0f; 
+  }
+  else if(m_currentvalue > 1.0f)
+  {
+    m_currentvalue = 1.0f;
+  }
+  
   m_singlechange = 0.0;
   m_lastupdate = time;
 
