@@ -36,15 +36,19 @@ class CClient
 {
   public:
     CClient();
-    CTcpClientSocket m_socket;       //tcp socket for the client
-    CMessageQueue    m_messagequeue; //stores client messages
-    int              m_priority;     //priority of the client, 255 means an inactive client
-    void             SetPriority(int priority) { m_priority = Clamp(priority, 0, 255); }
-    int64_t          m_connecttime;  //when a client connected, used to decide which is the oldest client in case of same priority
+    
+    CTcpClientSocket  m_socket;       //tcp socket for the client
+    
+    CMessageQueue     m_messagequeue; //stores client messages
+    int               m_priority;     //priority of the client, 255 means an inactive client
+    void              SetPriority(int priority) { m_priority = Clamp(priority, 0, 255); }
+    int64_t           m_connecttime;  //when a client connected, used to decide which is the oldest client in case of same priority
 
     std::vector<CLight> m_lights;    //lights of the client
 
-    int              LightNameToInt(std::string& lightname);
+    int               LightNameToInt(std::string& lightname);
+    void              SetSocket(bool socket) { usocket = socket; }
+    bool              usocket;
 };
 
 class CClientsHandler
@@ -55,12 +59,16 @@ class CClientsHandler
     void FillChannels(std::vector<CChannel>& channels, int64_t time, CDevice* device); //called by devices
     void Process();
     void Cleanup();
+    void SetSocket(bool socket) { usocket = socket; }
     
   private:
+  
     //where clients will connect to
     CTcpServerSocket m_socket;
+
     std::string      m_address;
     int              m_port;
+    bool             usocket;
 
     //clients we have, note that it's a vector of pointers so we can use a client outside a lock
     //and the pointer stays valid even if the vector changes
@@ -75,9 +83,9 @@ class CClientsHandler
     void     RemoveClient(CClient* client);   //removes a client based on pointer
     bool     HandleMessages(CClient* client); //handles client messages
     bool     ParseMessage(CClient* client, CMessage& message); //parses client messages
-    bool     ParseGet(CClient* client, CMessage& message);
-    bool     ParseSet(CClient* client, CMessage& message);
-    bool     ParseSetLight(CClient* client, CMessage& message);
+    bool     ParseGet(CClient* client, const char *message, CMessage& messageOrg);
+    bool     ParseSet(CClient* client, const char *message, CMessage& messageOrg);
+    bool     ParseSetLight(CClient* client, const char* message, CMessage& messageOrg);
     bool     ParseSync(CClient* client);
     bool     SendVersion(CClient* client);    //this is used to check that boblightd and libboblight have the same protocol version
     bool     SendLights(CClient* client);     //sends light info, like name and area
