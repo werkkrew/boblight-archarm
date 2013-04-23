@@ -1,4 +1,4 @@
-Boblight for Arch Linux ARM/ Raspberry Pi
+Boblight for Arch Linux ARM / Raspberry Pi
 ================
 
 Overview
@@ -17,7 +17,7 @@ git, gcc, make, libx11, libxrender, portaudio, libxext, mesa, glu, ffmpeg
 
 This can be done with the following command:
 
-`pacman -Sy git gcc make libx11 libxrender portaudio libxext mesa glu ffmpegi`
+`pacman -Sy git gcc make libx11 libxrender portaudio libxext mesa glu ffmpeg`
 
 To install: `./configure && make && make install`
 
