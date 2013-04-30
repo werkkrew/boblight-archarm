@@ -109,7 +109,7 @@ void CClientsHandler::Process()
 			int returnv = client->m_socket.Read(data);
 			if (returnv == FAIL)
 			{ //socket broke probably
-				Log("%s", client->m_socket.GetError().c_str());
+				Log("Unable to read from client: %s", client->m_socket.GetError().c_str());
 				RemoveClient(client);
 				continue;
 			}
@@ -119,6 +119,7 @@ void CClientsHandler::Process()
 
 			//check messages from the messaqueue and parse them, if it fails remove the client
 			if (!HandleMessages(client))
+				Log("Message from client unable to be handled.");
 				RemoveClient(client);
 		}
 	}

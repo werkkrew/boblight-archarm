@@ -3,27 +3,49 @@
 # Modified by werkkrew from original code found: https://code.google.com/p/boblight/issues/detail?id=24
 # Changed script to limit light names to 3 characters to work with the Speedy1985 enhancements.
 
-#How far into the screen should it look
-depth=13
+echo -n "What is the depth that the hscan and vscan should look into the screen? [13] "
+read depth
 
-echo -n "What is the device name? "
+echo -n "What is the device name? [ambilight] "
 read devicename
 
-echo -n "How many lights on the Left side? "
+echo -n "What is the color order of your LED's (e.g. BRG, RGB, GRB)?  [RGB] "
+read rgborder
+
+echo -n "How many lights on the Left side? [0] "
 read left
 
-echo -n "How many lights on the Top? "
+echo -n "How many lights on the Top? [0] "
 read top
 
-echo -n "How many lights on the Right side? "
+echo -n "How many lights on the Right side? [0] "
 read right
 
-echo -n "How many lights on the Bottom? "
+echo -n "How many lights on the Bottom? [0] "
 read bottom
+
+# Set the defaults
+left=${left:-0}
+top=${top:-0}
+right=${right:-0}
+bottom=${bottom:-0}
+devicename=${devicename:-ambilight}
+depth=${depth:-13}
+rgborder=${rgborder:-RGB}
 
 total=$(expr $left + $top + $right + $bottom)
 
 echo "Total light: $total"
+
+if [ "$rgborder" == "RGB" ]; then
+	declare -a ledcolor=(red green blue)
+elif [ "$rgborder" == "BRG" ]; then
+	declare -a ledcolor=(blue red green)
+elif [ $rgborder == "GRB" ]; then
+	declare -a ledcolor=(green red blue)
+else
+	declare -a ledcolor=(red green blue)	
+fi
 
 echo
 echo "------- Light section starts here ------"
@@ -42,20 +64,16 @@ if [ $bottom -ne 0 ]; then
 
                 echo
                 echo "[light]"
-                echo "name            B$bcount"
-
-                echo "color           red     $devicename $colorcount"
+		printf "%-20s B%02d\n" "name" $bcount
+		printf "%-20s %-5s %12s %d\n" "color" "${ledcolor[0]}" "$devicename" $colorcount
+                ((colorcount++))
+		printf "%-20s %-5s %12s %d\n" "color" "${ledcolor[1]}" "$devicename" $colorcount
+                ((colorcount++))
+		printf "%-20s %-5s %12s %d\n" "color" "${ledcolor[2]}" "$devicename" $colorcount
                 ((colorcount++))
 
-                echo "color           green   $devicename $colorcount"
-                ((colorcount++))
-
-                echo "color           blue    $devicename $colorcount"
-                ((colorcount++))
-
-                echo "hscan           $btop $bcurrent"
-                echo "vscan           $(echo "scale=2; 100 - $depth" | bc) 100"
-
+		printf "%-20s %3.2f %3.2f\n" "hscan" $btop $bcurrent
+		printf "%-20s %3.2f %3.2f\n" "vscan" $(echo "scale=2; 100 - $depth" | bc) 100
 
                 bcurrent=$btop
 
@@ -74,19 +92,16 @@ if [ $left -ne 0 ]; then
                 
                 echo
                 echo "[light]"
-                echo "name            L$lcount"
-                
-                echo "color           red     $devicename $colorcount"
+                printf "%-20s L%02d\n" "name" $lcount
+                printf "%-20s %-5s %12s %d\n" "color" "${ledcolor[0]}" "$devicename" $colorcount
+                ((colorcount++))
+                printf "%-20s %-5s %12s %d\n" "color" "${ledcolor[1]}" "$devicename" $colorcount
+                ((colorcount++))
+                printf "%-20s %-5s %12s %d\n" "color" "${ledcolor[2]}" "$devicename" $colorcount
                 ((colorcount++))
 
-                echo "color           green   $devicename $colorcount" 
-                ((colorcount++))
-
-                echo "color           blue    $devicename $colorcount"
-                ((colorcount++))
-
-                echo "hscan           0 $depth"
-                echo "vscan           $ltop $lcurrent"
+                printf "%-20s %3.2f %3.2f\n" "hscan" 0 $depth 
+                printf "%-20s %3.2f %3.2f\n" "vscan" $ltop $lcurrent
 
                 lcurrent=$ltop
 
@@ -106,20 +121,16 @@ if [ $top -ne 0 ]; then
 
                 echo
                 echo "[light]"
-                echo "name            T$tcount"
-
-                echo "color           red     $devicename $colorcount"
+		printf "%-20s T%02d\n" "name" $tcount
+                printf "%-20s %-5s %12s %d\n" "color" "${ledcolor[0]}" "$devicename" $colorcount
+                ((colorcount++))
+                printf "%-20s %-5s %12s %d\n" "color" "${ledcolor[1]}" "$devicename" $colorcount
+                ((colorcount++))
+                printf "%-20s %-5s %12s %d\n" "color" "${ledcolor[2]}" "$devicename" $colorcount
                 ((colorcount++))
 
-                echo "color           green   $devicename $colorcount"
-                ((colorcount++))
-
-                echo "color           blue    $devicename $colorcount"
-                ((colorcount++))
-
-                echo "hscan           $tcurrent $ttop"
-                echo "vscan           0 $depth"
-
+                printf "%-20s %3.2f %3.2f\n" "hscan" $tcurrent $ttop
+                printf "%-20s %3.2f %3.2f\n" "vscan" 0 $depth
 
                 tcurrent=$ttop
 
@@ -138,19 +149,16 @@ if [ $right -ne 0 ]; then
 
                 echo
                 echo "[light]"
-                echo "name            R$rcount"
-
-                echo "color           red     $devicename $colorcount"
+                printf "%-20s R%02d\n" "name" $rcount
+                printf "%-20s %-5s %12s %d\n" "color" "${ledcolor[0]}" "$devicename" $colorcount
+                ((colorcount++))
+                printf "%-20s %-5s %12s %d\n" "color" "${ledcolor[1]}" "$devicename" $colorcount
+                ((colorcount++))
+                printf "%-20s %-5s %12s %d\n" "color" "${ledcolor[2]}" "$devicename" $colorcount
                 ((colorcount++))
 
-                echo "color           green   $devicename $colorcount"
-                ((colorcount++))
-
-                echo "color           blue    $devicename $colorcount"
-                ((colorcount++))
-
-                echo "hscan           $(echo "scale=2; 100 - $depth" | bc) 100"
-                echo "vscan           $rcurrent $rtop"
+                printf "%-20s %3.2f %3.2f\n" "hscan" $(echo "scale=2; 100 - $depth" | bc) 100
+                printf "%-20s %3.2f %3.2f\n" "vscan" $rcurrent $rtop
 
                 rcurrent=$rtop
 
@@ -168,20 +176,16 @@ if [ $bottom -ne 0 ]; then
 
                 echo
                 echo "[light]"
-                echo "name            B$bcount"
-
-                echo "color           red     $devicename $colorcount"
+                printf "%-20s B%02d\n" "name" $rcount
+                printf "%-20s %-5s %12s %d\n" "color" "${ledcolor[0]}" "$devicename" $colorcount
+                ((colorcount++))
+                printf "%-20s %-5s %12s %d\n" "color" "${ledcolor[1]}" "$devicename" $colorcount
+                ((colorcount++))
+                printf "%-20s %-5s %12s %d\n" "color" "${ledcolor[2]}" "$devicename" $colorcount
                 ((colorcount++))
 
-                echo "color           green   $devicename $colorcount"
-                ((colorcount++))
-
-                echo "color           blue    $devicename $colorcount"
-                ((colorcount++))
-
-                echo "hscan           $btop $bcurrent"
-                echo "vscan           $(echo "scale=2; 100 - $depth" | bc) 100"
-
+                printf "%-20s %3.2f %3.2f\n" "hscan" $btop $bcurrent
+                printf "%-20s %3.2f %3.2f\n" "vscan" $(echo "scale=2; 100 - $depth" | bc) 100
 
                 bcurrent=$btop
 
