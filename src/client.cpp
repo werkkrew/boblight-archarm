@@ -59,18 +59,18 @@ CClientsHandler::CClientsHandler(std::vector<CLight>& lights) :
 //this is called from a loop from main()
 void CClientsHandler::Process()
 {
-       
-    //Open listening unix socket if it's not already
-    if (!m_socket.IsOpen())
-    {
-        Log("opening listening TcpSocket on %s:%i",m_address.empty() ? "*" : m_address.c_str(), m_port);
-        if (!m_socket.Open(m_address, m_port,1000000))
-        {
-	        LogError("%s", m_socket.GetError().c_str());
-	        m_socket.Close();
-        }
-    }
-    
+	//open listening socket if it's not already
+	if (!m_socket.IsOpen())
+	{
+		Log("opening listening socket on %s:%i",
+				m_address.empty() ? "*" : m_address.c_str(), m_port);
+		if (!m_socket.Open(m_address, m_port, 1000000))
+		{
+			LogError("%s", m_socket.GetError().c_str());
+			m_socket.Close();
+		}
+	}
+
 	//see if there's a socket we can read from
 	vector<int> sockets;
 	GetReadableFd(sockets);
@@ -78,17 +78,14 @@ void CClientsHandler::Process()
 	for (vector<int>::iterator it = sockets.begin(); it != sockets.end(); ++it)
 	{
 		int sock = *it;
-		int returnv;
-		
 		if (sock == m_socket.GetSock()) //we can read from the listening socket
 		{
 			CClient* client = new CClient;
-
-			returnv = m_socket.Accept(client->m_socket);
-
+			int returnv = m_socket.Accept(client->m_socket);
 			if (returnv == SUCCESS)
 			{
-				Log("%s:%i connected",client->m_socket.GetAddress().c_str(), client->m_socket.GetPort());
+				Log("%s:%i connected",
+						client->m_socket.GetAddress().c_str(), client->m_socket.GetPort());
 				AddClient(client);
 			}
 			else
@@ -109,17 +106,16 @@ void CClientsHandler::Process()
 			int returnv = client->m_socket.Read(data);
 			if (returnv == FAIL)
 			{ //socket broke probably
-				Log("Unable to read from client: %s", client->m_socket.GetError().c_str());
+				Log("%s", client->m_socket.GetError().c_str());
 				RemoveClient(client);
 				continue;
 			}
-            
+
 			//add data to the messagequeue
 			client->m_messagequeue.AddData(data.GetData(), data.GetSize());
 
 			//check messages from the messaqueue and parse them, if it fails remove the client
 			if (!HandleMessages(client))
-				Log("Message from client unable to be handled.");
 				RemoveClient(client);
 		}
 	}
@@ -138,8 +134,6 @@ void CClientsHandler::Cleanup()
 
 	Log("closing listening socket");
 	m_socket.Close();
-	
-	unlink("/tmp/boblightd.socket");
 
 	Log("clients handler stopped");
 }
@@ -148,9 +142,7 @@ void CClientsHandler::Cleanup()
 void CClientsHandler::AddClient(CClient* client)
 {
 	CLock lock(m_mutex);
-    
-    Log("AddClient");
-    
+
 	if (m_clients.size() >= FD_SETSIZE) //maximum number of clients reached
 	{
 		LogError("number of clients reached maximum %i", FD_SETSIZE);
@@ -183,7 +175,7 @@ void CClientsHandler::GetReadableFd(vector<int>& sockets)
 	//store all the client sockets
 	vector<int> waitsockets;
 	waitsockets.push_back(m_socket.GetSock());
-	for (int i = 0; i < m_clients.size(); i++)
+	for (int i = 0; i < m_clients.size(); ++i)
 		waitsockets.push_back(m_clients[i]->m_socket.GetSock());
 
 	lock.Leave();
@@ -192,7 +184,7 @@ void CClientsHandler::GetReadableFd(vector<int>& sockets)
 	fd_set rsocks;
 
 	FD_ZERO(&rsocks);
-	for (int i = 0; i < waitsockets.size(); i++)
+	for (int i = 0; i < waitsockets.size(); ++i)
 	{
 		FD_SET(waitsockets[i], &rsocks);
 		if (waitsockets[i] > highestsock)
@@ -216,13 +208,12 @@ void CClientsHandler::GetReadableFd(vector<int>& sockets)
 	}
 
 	//return all sockets that can be read
-	for (int i = 0; i < waitsockets.size(); i++)
+	for (int i = 0; i < waitsockets.size(); ++i)
 	{
 		if (FD_ISSET(waitsockets[i], &rsocks))
 			sockets.push_back(waitsockets[i]);
 	}
 }
-
 
 //gets a client from a socket fd
 CClient* CClientsHandler::GetClientFromSock(int sock)
@@ -294,7 +285,6 @@ bool CClientsHandler::HandleMessages(CClient* client)
 bool CClientsHandler::ParseMessage(CClient* client, CMessage& message)
 {
 	CTcpData data;
-
 	string messagekey;
 
 	const char *messageString = message.message.c_str();
@@ -391,7 +381,7 @@ bool CClientsHandler::SendLights(CClient* client)
 
 	//build up messages by appending to CTcpData
 	data.SetData("lights " + ToString(client->m_lights.size()) + "\n");
-    
+
 	for (int i = 0; i < client->m_lights.size(); ++i)
 	{
 		data.SetData("light " + client->m_lights[i].GetName() + " ", true);
@@ -507,11 +497,10 @@ bool CClientsHandler::ParseSetLight(CClient* client, const char* message, CMessa
 
 		char* pEnd1;
 		char* pEnd2;
-
 		rgb[0] = strtof(message, &pEnd1);
 		rgb[1] = strtof(pEnd1, &pEnd2);
 		rgb[2] = strtof(pEnd2, NULL);
-		
+
 		CLock lock(m_mutex);
 		client->m_lights[lightnr].SetRgb(rgb, messageOrg.time);
 	}
