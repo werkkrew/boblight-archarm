@@ -176,7 +176,7 @@ if [ $bottom -ne 0 ]; then
 
                 echo
                 echo "[light]"
-                printf "%-20s B%02d\n" "name" $rcount
+                printf "%-20s B%02d\n" "name" $bcount
                 printf "%-20s %-5s %12s %d\n" "color" "${ledcolor[0]}" "$devicename" $colorcount
                 ((colorcount++))
                 printf "%-20s %-5s %12s %d\n" "color" "${ledcolor[1]}" "$devicename" $colorcount
