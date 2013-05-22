@@ -1,0 +1,1673 @@
+[global]
+#interface      127.0.0.1
+port            19333
+
+[device]
+name            ambilight
+output          /dev/spidev0.0
+channels        618
+type            lpd8806
+interval        20000
+rate            115200
+allowsync       on
+debug           off
+
+[color]
+name            red
+rgb             FF0000
+
+[color]
+name            green
+rgb             00FF00
+
+[color]
+name            blue
+rgb             0000FF
+
+[light]
+name                 B01
+color                blue     ambilight 1
+color                red      ambilight 2
+color                green    ambilight 3
+hscan                48.44 50.00
+vscan                85.00 100.00
+
+[light]
+name                 B02
+color                blue     ambilight 4
+color                red      ambilight 5
+color                green    ambilight 6
+hscan                46.88 48.44
+vscan                85.00 100.00
+
+[light]
+name                 B03
+color                blue     ambilight 7
+color                red      ambilight 8
+color                green    ambilight 9
+hscan                45.32 46.88
+vscan                85.00 100.00
+
+[light]
+name                 B04
+color                blue     ambilight 10
+color                red      ambilight 11
+color                green    ambilight 12
+hscan                43.76 45.32
+vscan                85.00 100.00
+
+[light]
+name                 B05
+color                blue     ambilight 13
+color                red      ambilight 14
+color                green    ambilight 15
+hscan                42.20 43.76
+vscan                85.00 100.00
+
+[light]
+name                 B06
+color                blue     ambilight 16
+color                red      ambilight 17
+color                green    ambilight 18
+hscan                40.64 42.20
+vscan                85.00 100.00
+
+[light]
+name                 B07
+color                blue     ambilight 19
+color                red      ambilight 20
+color                green    ambilight 21
+hscan                39.08 40.64
+vscan                85.00 100.00
+
+[light]
+name                 B08
+color                blue     ambilight 22
+color                red      ambilight 23
+color                green    ambilight 24
+hscan                37.52 39.08
+vscan                85.00 100.00
+
+[light]
+name                 B09
+color                blue     ambilight 25
+color                red      ambilight 26
+color                green    ambilight 27
+hscan                35.96 37.52
+vscan                85.00 100.00
+
+[light]
+name                 B10
+color                blue     ambilight 28
+color                red      ambilight 29
+color                green    ambilight 30
+hscan                34.40 35.96
+vscan                85.00 100.00
+
+[light]
+name                 B11
+color                blue     ambilight 31
+color                red      ambilight 32
+color                green    ambilight 33
+hscan                32.84 34.40
+vscan                85.00 100.00
+
+[light]
+name                 B12
+color                blue     ambilight 34
+color                red      ambilight 35
+color                green    ambilight 36
+hscan                31.28 32.84
+vscan                85.00 100.00
+
+[light]
+name                 B13
+color                blue     ambilight 37
+color                red      ambilight 38
+color                green    ambilight 39
+hscan                29.72 31.28
+vscan                85.00 100.00
+
+[light]
+name                 B14
+color                blue     ambilight 40
+color                red      ambilight 41
+color                green    ambilight 42
+hscan                28.16 29.72
+vscan                85.00 100.00
+
+[light]
+name                 B15
+color                blue     ambilight 43
+color                red      ambilight 44
+color                green    ambilight 45
+hscan                26.60 28.16
+vscan                85.00 100.00
+
+[light]
+name                 B16
+color                blue     ambilight 46
+color                red      ambilight 47
+color                green    ambilight 48
+hscan                25.04 26.60
+vscan                85.00 100.00
+
+[light]
+name                 B17
+color                blue     ambilight 49
+color                red      ambilight 50
+color                green    ambilight 51
+hscan                23.48 25.04
+vscan                85.00 100.00
+
+[light]
+name                 B18
+color                blue     ambilight 52
+color                red      ambilight 53
+color                green    ambilight 54
+hscan                21.92 23.48
+vscan                85.00 100.00
+
+[light]
+name                 B19
+color                blue     ambilight 55
+color                red      ambilight 56
+color                green    ambilight 57
+hscan                20.36 21.92
+vscan                85.00 100.00
+
+[light]
+name                 B20
+color                blue     ambilight 58
+color                red      ambilight 59
+color                green    ambilight 60
+hscan                18.80 20.36
+vscan                85.00 100.00
+
+[light]
+name                 B21
+color                blue     ambilight 61
+color                red      ambilight 62
+color                green    ambilight 63
+hscan                17.24 18.80
+vscan                85.00 100.00
+
+[light]
+name                 B22
+color                blue     ambilight 64
+color                red      ambilight 65
+color                green    ambilight 66
+hscan                15.68 17.24
+vscan                85.00 100.00
+
+[light]
+name                 B23
+color                blue     ambilight 67
+color                red      ambilight 68
+color                green    ambilight 69
+hscan                14.12 15.68
+vscan                85.00 100.00
+
+[light]
+name                 B24
+color                blue     ambilight 70
+color                red      ambilight 71
+color                green    ambilight 72
+hscan                12.56 14.12
+vscan                85.00 100.00
+
+[light]
+name                 B25
+color                blue     ambilight 73
+color                red      ambilight 74
+color                green    ambilight 75
+hscan                11.00 12.56
+vscan                85.00 100.00
+
+[light]
+name                 B26
+color                blue     ambilight 76
+color                red      ambilight 77
+color                green    ambilight 78
+hscan                9.44 11.00
+vscan                85.00 100.00
+
+[light]
+name                 B27
+color                blue     ambilight 79
+color                red      ambilight 80
+color                green    ambilight 81
+hscan                7.88 9.44
+vscan                85.00 100.00
+
+[light]
+name                 B28
+color                blue     ambilight 82
+color                red      ambilight 83
+color                green    ambilight 84
+hscan                6.32 7.88
+vscan                85.00 100.00
+
+[light]
+name                 B29
+color                blue     ambilight 85
+color                red      ambilight 86
+color                green    ambilight 87
+hscan                4.76 6.32
+vscan                85.00 100.00
+
+[light]
+name                 B30
+color                blue     ambilight 88
+color                red      ambilight 89
+color                green    ambilight 90
+hscan                3.20 4.76
+vscan                85.00 100.00
+
+[light]
+name                 B31
+color                blue     ambilight 91
+color                red      ambilight 92
+color                green    ambilight 93
+hscan                1.64 3.20
+vscan                85.00 100.00
+
+[light]
+name                 B32
+color                blue     ambilight 94
+color                red      ambilight 95
+color                green    ambilight 96
+hscan                0.08 1.64
+vscan                85.00 100.00
+
+[light]
+name                 L01
+color                blue     ambilight 97
+color                red      ambilight 98
+color                green    ambilight 99
+hscan                0.00 15.00
+vscan                97.44 100.00
+
+[light]
+name                 L02
+color                blue     ambilight 100
+color                red      ambilight 101
+color                green    ambilight 102
+hscan                0.00 15.00
+vscan                94.88 97.44
+
+[light]
+name                 L03
+color                blue     ambilight 103
+color                red      ambilight 104
+color                green    ambilight 105
+hscan                0.00 15.00
+vscan                92.32 94.88
+
+[light]
+name                 L04
+color                blue     ambilight 106
+color                red      ambilight 107
+color                green    ambilight 108
+hscan                0.00 15.00
+vscan                89.76 92.32
+
+[light]
+name                 L05
+color                blue     ambilight 109
+color                red      ambilight 110
+color                green    ambilight 111
+hscan                0.00 15.00
+vscan                87.20 89.76
+
+[light]
+name                 L06
+color                blue     ambilight 112
+color                red      ambilight 113
+color                green    ambilight 114
+hscan                0.00 15.00
+vscan                84.64 87.20
+
+[light]
+name                 L07
+color                blue     ambilight 115
+color                red      ambilight 116
+color                green    ambilight 117
+hscan                0.00 15.00
+vscan                82.08 84.64
+
+[light]
+name                 L08
+color                blue     ambilight 118
+color                red      ambilight 119
+color                green    ambilight 120
+hscan                0.00 15.00
+vscan                79.52 82.08
+
+[light]
+name                 L09
+color                blue     ambilight 121
+color                red      ambilight 122
+color                green    ambilight 123
+hscan                0.00 15.00
+vscan                76.96 79.52
+
+[light]
+name                 L10
+color                blue     ambilight 124
+color                red      ambilight 125
+color                green    ambilight 126
+hscan                0.00 15.00
+vscan                74.40 76.96
+
+[light]
+name                 L11
+color                blue     ambilight 127
+color                red      ambilight 128
+color                green    ambilight 129
+hscan                0.00 15.00
+vscan                71.84 74.40
+
+[light]
+name                 L12
+color                blue     ambilight 130
+color                red      ambilight 131
+color                green    ambilight 132
+hscan                0.00 15.00
+vscan                69.28 71.84
+
+[light]
+name                 L13
+color                blue     ambilight 133
+color                red      ambilight 134
+color                green    ambilight 135
+hscan                0.00 15.00
+vscan                66.72 69.28
+
+[light]
+name                 L14
+color                blue     ambilight 136
+color                red      ambilight 137
+color                green    ambilight 138
+hscan                0.00 15.00
+vscan                64.16 66.72
+
+[light]
+name                 L15
+color                blue     ambilight 139
+color                red      ambilight 140
+color                green    ambilight 141
+hscan                0.00 15.00
+vscan                61.60 64.16
+
+[light]
+name                 L16
+color                blue     ambilight 142
+color                red      ambilight 143
+color                green    ambilight 144
+hscan                0.00 15.00
+vscan                59.04 61.60
+
+[light]
+name                 L17
+color                blue     ambilight 145
+color                red      ambilight 146
+color                green    ambilight 147
+hscan                0.00 15.00
+vscan                56.48 59.04
+
+[light]
+name                 L18
+color                blue     ambilight 148
+color                red      ambilight 149
+color                green    ambilight 150
+hscan                0.00 15.00
+vscan                53.92 56.48
+
+[light]
+name                 L19
+color                blue     ambilight 151
+color                red      ambilight 152
+color                green    ambilight 153
+hscan                0.00 15.00
+vscan                51.36 53.92
+
+[light]
+name                 L20
+color                blue     ambilight 154
+color                red      ambilight 155
+color                green    ambilight 156
+hscan                0.00 15.00
+vscan                48.80 51.36
+
+[light]
+name                 L21
+color                blue     ambilight 157
+color                red      ambilight 158
+color                green    ambilight 159
+hscan                0.00 15.00
+vscan                46.24 48.80
+
+[light]
+name                 L22
+color                blue     ambilight 160
+color                red      ambilight 161
+color                green    ambilight 162
+hscan                0.00 15.00
+vscan                43.68 46.24
+
+[light]
+name                 L23
+color                blue     ambilight 163
+color                red      ambilight 164
+color                green    ambilight 165
+hscan                0.00 15.00
+vscan                41.12 43.68
+
+[light]
+name                 L24
+color                blue     ambilight 166
+color                red      ambilight 167
+color                green    ambilight 168
+hscan                0.00 15.00
+vscan                38.56 41.12
+
+[light]
+name                 L25
+color                blue     ambilight 169
+color                red      ambilight 170
+color                green    ambilight 171
+hscan                0.00 15.00
+vscan                36.00 38.56
+
+[light]
+name                 L26
+color                blue     ambilight 172
+color                red      ambilight 173
+color                green    ambilight 174
+hscan                0.00 15.00
+vscan                33.44 36.00
+
+[light]
+name                 L27
+color                blue     ambilight 175
+color                red      ambilight 176
+color                green    ambilight 177
+hscan                0.00 15.00
+vscan                30.88 33.44
+
+[light]
+name                 L28
+color                blue     ambilight 178
+color                red      ambilight 179
+color                green    ambilight 180
+hscan                0.00 15.00
+vscan                28.32 30.88
+
+[light]
+name                 L29
+color                blue     ambilight 181
+color                red      ambilight 182
+color                green    ambilight 183
+hscan                0.00 15.00
+vscan                25.76 28.32
+
+[light]
+name                 L30
+color                blue     ambilight 184
+color                red      ambilight 185
+color                green    ambilight 186
+hscan                0.00 15.00
+vscan                23.20 25.76
+
+[light]
+name                 L31
+color                blue     ambilight 187
+color                red      ambilight 188
+color                green    ambilight 189
+hscan                0.00 15.00
+vscan                20.64 23.20
+
+[light]
+name                 L32
+color                blue     ambilight 190
+color                red      ambilight 191
+color                green    ambilight 192
+hscan                0.00 15.00
+vscan                18.08 20.64
+
+[light]
+name                 L33
+color                blue     ambilight 193
+color                red      ambilight 194
+color                green    ambilight 195
+hscan                0.00 15.00
+vscan                15.52 18.08
+
+[light]
+name                 L34
+color                blue     ambilight 196
+color                red      ambilight 197
+color                green    ambilight 198
+hscan                0.00 15.00
+vscan                12.96 15.52
+
+[light]
+name                 L35
+color                blue     ambilight 199
+color                red      ambilight 200
+color                green    ambilight 201
+hscan                0.00 15.00
+vscan                10.40 12.96
+
+[light]
+name                 L36
+color                blue     ambilight 202
+color                red      ambilight 203
+color                green    ambilight 204
+hscan                0.00 15.00
+vscan                7.84 10.40
+
+[light]
+name                 L37
+color                blue     ambilight 205
+color                red      ambilight 206
+color                green    ambilight 207
+hscan                0.00 15.00
+vscan                5.28 7.84
+
+[light]
+name                 L38
+color                blue     ambilight 208
+color                red      ambilight 209
+color                green    ambilight 210
+hscan                0.00 15.00
+vscan                2.72 5.28
+
+[light]
+name                 L39
+color                blue     ambilight 211
+color                red      ambilight 212
+color                green    ambilight 213
+hscan                0.00 15.00
+vscan                0.16 2.72
+
+[light]
+name                 T01
+color                blue     ambilight 214
+color                red      ambilight 215
+color                green    ambilight 216
+hscan                0.00 1.53
+vscan                0.00 15.00
+
+[light]
+name                 T02
+color                blue     ambilight 217
+color                red      ambilight 218
+color                green    ambilight 219
+hscan                1.53 3.06
+vscan                0.00 15.00
+
+[light]
+name                 T03
+color                blue     ambilight 220
+color                red      ambilight 221
+color                green    ambilight 222
+hscan                3.06 4.59
+vscan                0.00 15.00
+
+[light]
+name                 T04
+color                blue     ambilight 223
+color                red      ambilight 224
+color                green    ambilight 225
+hscan                4.59 6.12
+vscan                0.00 15.00
+
+[light]
+name                 T05
+color                blue     ambilight 226
+color                red      ambilight 227
+color                green    ambilight 228
+hscan                6.12 7.65
+vscan                0.00 15.00
+
+[light]
+name                 T06
+color                blue     ambilight 229
+color                red      ambilight 230
+color                green    ambilight 231
+hscan                7.65 9.18
+vscan                0.00 15.00
+
+[light]
+name                 T07
+color                blue     ambilight 232
+color                red      ambilight 233
+color                green    ambilight 234
+hscan                9.18 10.71
+vscan                0.00 15.00
+
+[light]
+name                 T08
+color                blue     ambilight 235
+color                red      ambilight 236
+color                green    ambilight 237
+hscan                10.71 12.24
+vscan                0.00 15.00
+
+[light]
+name                 T09
+color                blue     ambilight 238
+color                red      ambilight 239
+color                green    ambilight 240
+hscan                12.24 13.77
+vscan                0.00 15.00
+
+[light]
+name                 T10
+color                blue     ambilight 241
+color                red      ambilight 242
+color                green    ambilight 243
+hscan                13.77 15.30
+vscan                0.00 15.00
+
+[light]
+name                 T11
+color                blue     ambilight 244
+color                red      ambilight 245
+color                green    ambilight 246
+hscan                15.30 16.83
+vscan                0.00 15.00
+
+[light]
+name                 T12
+color                blue     ambilight 247
+color                red      ambilight 248
+color                green    ambilight 249
+hscan                16.83 18.36
+vscan                0.00 15.00
+
+[light]
+name                 T13
+color                blue     ambilight 250
+color                red      ambilight 251
+color                green    ambilight 252
+hscan                18.36 19.89
+vscan                0.00 15.00
+
+[light]
+name                 T14
+color                blue     ambilight 253
+color                red      ambilight 254
+color                green    ambilight 255
+hscan                19.89 21.42
+vscan                0.00 15.00
+
+[light]
+name                 T15
+color                blue     ambilight 256
+color                red      ambilight 257
+color                green    ambilight 258
+hscan                21.42 22.95
+vscan                0.00 15.00
+
+[light]
+name                 T16
+color                blue     ambilight 259
+color                red      ambilight 260
+color                green    ambilight 261
+hscan                22.95 24.48
+vscan                0.00 15.00
+
+[light]
+name                 T17
+color                blue     ambilight 262
+color                red      ambilight 263
+color                green    ambilight 264
+hscan                24.48 26.01
+vscan                0.00 15.00
+
+[light]
+name                 T18
+color                blue     ambilight 265
+color                red      ambilight 266
+color                green    ambilight 267
+hscan                26.01 27.54
+vscan                0.00 15.00
+
+[light]
+name                 T19
+color                blue     ambilight 268
+color                red      ambilight 269
+color                green    ambilight 270
+hscan                27.54 29.07
+vscan                0.00 15.00
+
+[light]
+name                 T20
+color                blue     ambilight 271
+color                red      ambilight 272
+color                green    ambilight 273
+hscan                29.07 30.60
+vscan                0.00 15.00
+
+[light]
+name                 T21
+color                blue     ambilight 274
+color                red      ambilight 275
+color                green    ambilight 276
+hscan                30.60 32.13
+vscan                0.00 15.00
+
+[light]
+name                 T22
+color                blue     ambilight 277
+color                red      ambilight 278
+color                green    ambilight 279
+hscan                32.13 33.66
+vscan                0.00 15.00
+
+[light]
+name                 T23
+color                blue     ambilight 280
+color                red      ambilight 281
+color                green    ambilight 282
+hscan                33.66 35.19
+vscan                0.00 15.00
+
+[light]
+name                 T24
+color                blue     ambilight 283
+color                red      ambilight 284
+color                green    ambilight 285
+hscan                35.19 36.72
+vscan                0.00 15.00
+
+[light]
+name                 T25
+color                blue     ambilight 286
+color                red      ambilight 287
+color                green    ambilight 288
+hscan                36.72 38.25
+vscan                0.00 15.00
+
+[light]
+name                 T26
+color                blue     ambilight 289
+color                red      ambilight 290
+color                green    ambilight 291
+hscan                38.25 39.78
+vscan                0.00 15.00
+
+[light]
+name                 T27
+color                blue     ambilight 292
+color                red      ambilight 293
+color                green    ambilight 294
+hscan                39.78 41.31
+vscan                0.00 15.00
+
+[light]
+name                 T28
+color                blue     ambilight 295
+color                red      ambilight 296
+color                green    ambilight 297
+hscan                41.31 42.84
+vscan                0.00 15.00
+
+[light]
+name                 T29
+color                blue     ambilight 298
+color                red      ambilight 299
+color                green    ambilight 300
+hscan                42.84 44.37
+vscan                0.00 15.00
+
+[light]
+name                 T30
+color                blue     ambilight 301
+color                red      ambilight 302
+color                green    ambilight 303
+hscan                44.37 45.90
+vscan                0.00 15.00
+
+[light]
+name                 T31
+color                blue     ambilight 304
+color                red      ambilight 305
+color                green    ambilight 306
+hscan                45.90 47.43
+vscan                0.00 15.00
+
+[light]
+name                 T32
+color                blue     ambilight 307
+color                red      ambilight 308
+color                green    ambilight 309
+hscan                47.43 48.96
+vscan                0.00 15.00
+
+[light]
+name                 T33
+color                blue     ambilight 310
+color                red      ambilight 311
+color                green    ambilight 312
+hscan                48.96 50.49
+vscan                0.00 15.00
+
+[light]
+name                 T34
+color                blue     ambilight 313
+color                red      ambilight 314
+color                green    ambilight 315
+hscan                50.49 52.02
+vscan                0.00 15.00
+
+[light]
+name                 T35
+color                blue     ambilight 316
+color                red      ambilight 317
+color                green    ambilight 318
+hscan                52.02 53.55
+vscan                0.00 15.00
+
+[light]
+name                 T36
+color                blue     ambilight 319
+color                red      ambilight 320
+color                green    ambilight 321
+hscan                53.55 55.08
+vscan                0.00 15.00
+
+[light]
+name                 T37
+color                blue     ambilight 322
+color                red      ambilight 323
+color                green    ambilight 324
+hscan                55.08 56.61
+vscan                0.00 15.00
+
+[light]
+name                 T38
+color                blue     ambilight 325
+color                red      ambilight 326
+color                green    ambilight 327
+hscan                56.61 58.14
+vscan                0.00 15.00
+
+[light]
+name                 T39
+color                blue     ambilight 328
+color                red      ambilight 329
+color                green    ambilight 330
+hscan                58.14 59.67
+vscan                0.00 15.00
+
+[light]
+name                 T40
+color                blue     ambilight 331
+color                red      ambilight 332
+color                green    ambilight 333
+hscan                59.67 61.20
+vscan                0.00 15.00
+
+[light]
+name                 T41
+color                blue     ambilight 334
+color                red      ambilight 335
+color                green    ambilight 336
+hscan                61.20 62.73
+vscan                0.00 15.00
+
+[light]
+name                 T42
+color                blue     ambilight 337
+color                red      ambilight 338
+color                green    ambilight 339
+hscan                62.73 64.26
+vscan                0.00 15.00
+
+[light]
+name                 T43
+color                blue     ambilight 340
+color                red      ambilight 341
+color                green    ambilight 342
+hscan                64.26 65.79
+vscan                0.00 15.00
+
+[light]
+name                 T44
+color                blue     ambilight 343
+color                red      ambilight 344
+color                green    ambilight 345
+hscan                65.79 67.32
+vscan                0.00 15.00
+
+[light]
+name                 T45
+color                blue     ambilight 346
+color                red      ambilight 347
+color                green    ambilight 348
+hscan                67.32 68.85
+vscan                0.00 15.00
+
+[light]
+name                 T46
+color                blue     ambilight 349
+color                red      ambilight 350
+color                green    ambilight 351
+hscan                68.85 70.38
+vscan                0.00 15.00
+
+[light]
+name                 T47
+color                blue     ambilight 352
+color                red      ambilight 353
+color                green    ambilight 354
+hscan                70.38 71.91
+vscan                0.00 15.00
+
+[light]
+name                 T48
+color                blue     ambilight 355
+color                red      ambilight 356
+color                green    ambilight 357
+hscan                71.91 73.44
+vscan                0.00 15.00
+
+[light]
+name                 T49
+color                blue     ambilight 358
+color                red      ambilight 359
+color                green    ambilight 360
+hscan                73.44 74.97
+vscan                0.00 15.00
+
+[light]
+name                 T50
+color                blue     ambilight 361
+color                red      ambilight 362
+color                green    ambilight 363
+hscan                74.97 76.50
+vscan                0.00 15.00
+
+[light]
+name                 T51
+color                blue     ambilight 364
+color                red      ambilight 365
+color                green    ambilight 366
+hscan                76.50 78.03
+vscan                0.00 15.00
+
+[light]
+name                 T52
+color                blue     ambilight 367
+color                red      ambilight 368
+color                green    ambilight 369
+hscan                78.03 79.56
+vscan                0.00 15.00
+
+[light]
+name                 T53
+color                blue     ambilight 370
+color                red      ambilight 371
+color                green    ambilight 372
+hscan                79.56 81.09
+vscan                0.00 15.00
+
+[light]
+name                 T54
+color                blue     ambilight 373
+color                red      ambilight 374
+color                green    ambilight 375
+hscan                81.09 82.62
+vscan                0.00 15.00
+
+[light]
+name                 T55
+color                blue     ambilight 376
+color                red      ambilight 377
+color                green    ambilight 378
+hscan                82.62 84.15
+vscan                0.00 15.00
+
+[light]
+name                 T56
+color                blue     ambilight 379
+color                red      ambilight 380
+color                green    ambilight 381
+hscan                84.15 85.68
+vscan                0.00 15.00
+
+[light]
+name                 T57
+color                blue     ambilight 382
+color                red      ambilight 383
+color                green    ambilight 384
+hscan                85.68 87.21
+vscan                0.00 15.00
+
+[light]
+name                 T58
+color                blue     ambilight 385
+color                red      ambilight 386
+color                green    ambilight 387
+hscan                87.21 88.74
+vscan                0.00 15.00
+
+[light]
+name                 T59
+color                blue     ambilight 388
+color                red      ambilight 389
+color                green    ambilight 390
+hscan                88.74 90.27
+vscan                0.00 15.00
+
+[light]
+name                 T60
+color                blue     ambilight 391
+color                red      ambilight 392
+color                green    ambilight 393
+hscan                90.27 91.80
+vscan                0.00 15.00
+
+[light]
+name                 T61
+color                blue     ambilight 394
+color                red      ambilight 395
+color                green    ambilight 396
+hscan                91.80 93.33
+vscan                0.00 15.00
+
+[light]
+name                 T62
+color                blue     ambilight 397
+color                red      ambilight 398
+color                green    ambilight 399
+hscan                93.33 94.86
+vscan                0.00 15.00
+
+[light]
+name                 T63
+color                blue     ambilight 400
+color                red      ambilight 401
+color                green    ambilight 402
+hscan                94.86 96.39
+vscan                0.00 15.00
+
+[light]
+name                 T64
+color                blue     ambilight 403
+color                red      ambilight 404
+color                green    ambilight 405
+hscan                96.39 97.92
+vscan                0.00 15.00
+
+[light]
+name                 T65
+color                blue     ambilight 406
+color                red      ambilight 407
+color                green    ambilight 408
+hscan                97.92 99.45
+vscan                0.00 15.00
+
+[light]
+name                 R01
+color                blue     ambilight 409
+color                red      ambilight 410
+color                green    ambilight 411
+hscan                85.00 100.00
+vscan                0.00 2.63
+
+[light]
+name                 R02
+color                blue     ambilight 412
+color                red      ambilight 413
+color                green    ambilight 414
+hscan                85.00 100.00
+vscan                2.63 5.26
+
+[light]
+name                 R03
+color                blue     ambilight 415
+color                red      ambilight 416
+color                green    ambilight 417
+hscan                85.00 100.00
+vscan                5.26 7.89
+
+[light]
+name                 R04
+color                blue     ambilight 418
+color                red      ambilight 419
+color                green    ambilight 420
+hscan                85.00 100.00
+vscan                7.89 10.52
+
+[light]
+name                 R05
+color                blue     ambilight 421
+color                red      ambilight 422
+color                green    ambilight 423
+hscan                85.00 100.00
+vscan                10.52 13.15
+
+[light]
+name                 R06
+color                blue     ambilight 424
+color                red      ambilight 425
+color                green    ambilight 426
+hscan                85.00 100.00
+vscan                13.15 15.78
+
+[light]
+name                 R07
+color                blue     ambilight 427
+color                red      ambilight 428
+color                green    ambilight 429
+hscan                85.00 100.00
+vscan                15.78 18.41
+
+[light]
+name                 R08
+color                blue     ambilight 430
+color                red      ambilight 431
+color                green    ambilight 432
+hscan                85.00 100.00
+vscan                18.41 21.04
+
+[light]
+name                 R09
+color                blue     ambilight 433
+color                red      ambilight 434
+color                green    ambilight 435
+hscan                85.00 100.00
+vscan                21.04 23.67
+
+[light]
+name                 R10
+color                blue     ambilight 436
+color                red      ambilight 437
+color                green    ambilight 438
+hscan                85.00 100.00
+vscan                23.67 26.30
+
+[light]
+name                 R11
+color                blue     ambilight 439
+color                red      ambilight 440
+color                green    ambilight 441
+hscan                85.00 100.00
+vscan                26.30 28.93
+
+[light]
+name                 R12
+color                blue     ambilight 442
+color                red      ambilight 443
+color                green    ambilight 444
+hscan                85.00 100.00
+vscan                28.93 31.56
+
+[light]
+name                 R13
+color                blue     ambilight 445
+color                red      ambilight 446
+color                green    ambilight 447
+hscan                85.00 100.00
+vscan                31.56 34.19
+
+[light]
+name                 R14
+color                blue     ambilight 448
+color                red      ambilight 449
+color                green    ambilight 450
+hscan                85.00 100.00
+vscan                34.19 36.82
+
+[light]
+name                 R15
+color                blue     ambilight 451
+color                red      ambilight 452
+color                green    ambilight 453
+hscan                85.00 100.00
+vscan                36.82 39.45
+
+[light]
+name                 R16
+color                blue     ambilight 454
+color                red      ambilight 455
+color                green    ambilight 456
+hscan                85.00 100.00
+vscan                39.45 42.08
+
+[light]
+name                 R17
+color                blue     ambilight 457
+color                red      ambilight 458
+color                green    ambilight 459
+hscan                85.00 100.00
+vscan                42.08 44.71
+
+[light]
+name                 R18
+color                blue     ambilight 460
+color                red      ambilight 461
+color                green    ambilight 462
+hscan                85.00 100.00
+vscan                44.71 47.34
+
+[light]
+name                 R19
+color                blue     ambilight 463
+color                red      ambilight 464
+color                green    ambilight 465
+hscan                85.00 100.00
+vscan                47.34 49.97
+
+[light]
+name                 R20
+color                blue     ambilight 466
+color                red      ambilight 467
+color                green    ambilight 468
+hscan                85.00 100.00
+vscan                49.97 52.60
+
+[light]
+name                 R21
+color                blue     ambilight 469
+color                red      ambilight 470
+color                green    ambilight 471
+hscan                85.00 100.00
+vscan                52.60 55.23
+
+[light]
+name                 R22
+color                blue     ambilight 472
+color                red      ambilight 473
+color                green    ambilight 474
+hscan                85.00 100.00
+vscan                55.23 57.86
+
+[light]
+name                 R23
+color                blue     ambilight 475
+color                red      ambilight 476
+color                green    ambilight 477
+hscan                85.00 100.00
+vscan                57.86 60.49
+
+[light]
+name                 R24
+color                blue     ambilight 478
+color                red      ambilight 479
+color                green    ambilight 480
+hscan                85.00 100.00
+vscan                60.49 63.12
+
+[light]
+name                 R25
+color                blue     ambilight 481
+color                red      ambilight 482
+color                green    ambilight 483
+hscan                85.00 100.00
+vscan                63.12 65.75
+
+[light]
+name                 R26
+color                blue     ambilight 484
+color                red      ambilight 485
+color                green    ambilight 486
+hscan                85.00 100.00
+vscan                65.75 68.38
+
+[light]
+name                 R27
+color                blue     ambilight 487
+color                red      ambilight 488
+color                green    ambilight 489
+hscan                85.00 100.00
+vscan                68.38 71.01
+
+[light]
+name                 R28
+color                blue     ambilight 490
+color                red      ambilight 491
+color                green    ambilight 492
+hscan                85.00 100.00
+vscan                71.01 73.64
+
+[light]
+name                 R29
+color                blue     ambilight 493
+color                red      ambilight 494
+color                green    ambilight 495
+hscan                85.00 100.00
+vscan                73.64 76.27
+
+[light]
+name                 R30
+color                blue     ambilight 496
+color                red      ambilight 497
+color                green    ambilight 498
+hscan                85.00 100.00
+vscan                76.27 78.90
+
+[light]
+name                 R31
+color                blue     ambilight 499
+color                red      ambilight 500
+color                green    ambilight 501
+hscan                85.00 100.00
+vscan                78.90 81.53
+
+[light]
+name                 R32
+color                blue     ambilight 502
+color                red      ambilight 503
+color                green    ambilight 504
+hscan                85.00 100.00
+vscan                81.53 84.16
+
+[light]
+name                 R33
+color                blue     ambilight 505
+color                red      ambilight 506
+color                green    ambilight 507
+hscan                85.00 100.00
+vscan                84.16 86.79
+
+[light]
+name                 R34
+color                blue     ambilight 508
+color                red      ambilight 509
+color                green    ambilight 510
+hscan                85.00 100.00
+vscan                86.79 89.42
+
+[light]
+name                 R35
+color                blue     ambilight 511
+color                red      ambilight 512
+color                green    ambilight 513
+hscan                85.00 100.00
+vscan                89.42 92.05
+
+[light]
+name                 R36
+color                blue     ambilight 514
+color                red      ambilight 515
+color                green    ambilight 516
+hscan                85.00 100.00
+vscan                92.05 94.68
+
+[light]
+name                 R37
+color                blue     ambilight 517
+color                red      ambilight 518
+color                green    ambilight 519
+hscan                85.00 100.00
+vscan                94.68 97.31
+
+[light]
+name                 R38
+color                blue     ambilight 520
+color                red      ambilight 521
+color                green    ambilight 522
+hscan                85.00 100.00
+vscan                97.31 99.94
+
+[light]
+name                 B33
+color                blue     ambilight 523
+color                red      ambilight 524
+color                green    ambilight 525
+hscan                98.44 100.00
+vscan                85.00 100.00
+
+[light]
+name                 B34
+color                blue     ambilight 526
+color                red      ambilight 527
+color                green    ambilight 528
+hscan                96.88 98.44
+vscan                85.00 100.00
+
+[light]
+name                 B35
+color                blue     ambilight 529
+color                red      ambilight 530
+color                green    ambilight 531
+hscan                95.32 96.88
+vscan                85.00 100.00
+
+[light]
+name                 B36
+color                blue     ambilight 532
+color                red      ambilight 533
+color                green    ambilight 534
+hscan                93.76 95.32
+vscan                85.00 100.00
+
+[light]
+name                 B37
+color                blue     ambilight 535
+color                red      ambilight 536
+color                green    ambilight 537
+hscan                92.20 93.76
+vscan                85.00 100.00
+
+[light]
+name                 B38
+color                blue     ambilight 538
+color                red      ambilight 539
+color                green    ambilight 540
+hscan                90.64 92.20
+vscan                85.00 100.00
+
+[light]
+name                 B39
+color                blue     ambilight 541
+color                red      ambilight 542
+color                green    ambilight 543
+hscan                89.08 90.64
+vscan                85.00 100.00
+
+[light]
+name                 B40
+color                blue     ambilight 544
+color                red      ambilight 545
+color                green    ambilight 546
+hscan                87.52 89.08
+vscan                85.00 100.00
+
+[light]
+name                 B41
+color                blue     ambilight 547
+color                red      ambilight 548
+color                green    ambilight 549
+hscan                85.96 87.52
+vscan                85.00 100.00
+
+[light]
+name                 B42
+color                blue     ambilight 550
+color                red      ambilight 551
+color                green    ambilight 552
+hscan                84.40 85.96
+vscan                85.00 100.00
+
+[light]
+name                 B43
+color                blue     ambilight 553
+color                red      ambilight 554
+color                green    ambilight 555
+hscan                82.84 84.40
+vscan                85.00 100.00
+
+[light]
+name                 B44
+color                blue     ambilight 556
+color                red      ambilight 557
+color                green    ambilight 558
+hscan                81.28 82.84
+vscan                85.00 100.00
+
+[light]
+name                 B45
+color                blue     ambilight 559
+color                red      ambilight 560
+color                green    ambilight 561
+hscan                79.72 81.28
+vscan                85.00 100.00
+
+[light]
+name                 B46
+color                blue     ambilight 562
+color                red      ambilight 563
+color                green    ambilight 564
+hscan                78.16 79.72
+vscan                85.00 100.00
+
+[light]
+name                 B47
+color                blue     ambilight 565
+color                red      ambilight 566
+color                green    ambilight 567
+hscan                76.60 78.16
+vscan                85.00 100.00
+
+[light]
+name                 B48
+color                blue     ambilight 568
+color                red      ambilight 569
+color                green    ambilight 570
+hscan                75.04 76.60
+vscan                85.00 100.00
+
+[light]
+name                 B49
+color                blue     ambilight 571
+color                red      ambilight 572
+color                green    ambilight 573
+hscan                73.48 75.04
+vscan                85.00 100.00
+
+[light]
+name                 B50
+color                blue     ambilight 574
+color                red      ambilight 575
+color                green    ambilight 576
+hscan                71.92 73.48
+vscan                85.00 100.00
+
+[light]
+name                 B51
+color                blue     ambilight 577
+color                red      ambilight 578
+color                green    ambilight 579
+hscan                70.36 71.92
+vscan                85.00 100.00
+
+[light]
+name                 B52
+color                blue     ambilight 580
+color                red      ambilight 581
+color                green    ambilight 582
+hscan                68.80 70.36
+vscan                85.00 100.00
+
+[light]
+name                 B53
+color                blue     ambilight 583
+color                red      ambilight 584
+color                green    ambilight 585
+hscan                67.24 68.80
+vscan                85.00 100.00
+
+[light]
+name                 B54
+color                blue     ambilight 586
+color                red      ambilight 587
+color                green    ambilight 588
+hscan                65.68 67.24
+vscan                85.00 100.00
+
+[light]
+name                 B55
+color                blue     ambilight 589
+color                red      ambilight 590
+color                green    ambilight 591
+hscan                64.12 65.68
+vscan                85.00 100.00
+
+[light]
+name                 B56
+color                blue     ambilight 592
+color                red      ambilight 593
+color                green    ambilight 594
+hscan                62.56 64.12
+vscan                85.00 100.00
+
+[light]
+name                 B57
+color                blue     ambilight 595
+color                red      ambilight 596
+color                green    ambilight 597
+hscan                61.00 62.56
+vscan                85.00 100.00
+
+[light]
+name                 B58
+color                blue     ambilight 598
+color                red      ambilight 599
+color                green    ambilight 600
+hscan                59.44 61.00
+vscan                85.00 100.00
+
+[light]
+name                 B59
+color                blue     ambilight 601
+color                red      ambilight 602
+color                green    ambilight 603
+hscan                57.88 59.44
+vscan                85.00 100.00
+
+[light]
+name                 B60
+color                blue     ambilight 604
+color                red      ambilight 605
+color                green    ambilight 606
+hscan                56.32 57.88
+vscan                85.00 100.00
+
+[light]
+name                 B61
+color                blue     ambilight 607
+color                red      ambilight 608
+color                green    ambilight 609
+hscan                54.76 56.32
+vscan                85.00 100.00
+
+[light]
+name                 B62
+color                blue     ambilight 610
+color                red      ambilight 611
+color                green    ambilight 612
+hscan                53.20 54.76
+vscan                85.00 100.00
+
+[light]
+name                 B63
+color                blue     ambilight 613
+color                red      ambilight 614
+color                green    ambilight 615
+hscan                51.64 53.20
+vscan                85.00 100.00
+
+[light]
+name                 B64
+color                blue     ambilight 616
+color                red      ambilight 617
+color                green    ambilight 618
+hscan                50.08 51.64
+vscan                85.00 100.00
