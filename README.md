@@ -23,7 +23,7 @@ git, gcc, make, libx11, libxrender, portaudio, libxext, mesa, glu, ffmpeg
 
 This can be done with the following command:
 
-`pacman -Sy git gcc make libx11 libxrender portaudio libxext mesa glu ffmpeg`
+`pacman -Sy git gcc make libx11 libxrender portaudio libxext mesa glu ffmpeg bc`
 
 To install: `./configure && make && make install`
 
