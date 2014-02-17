@@ -77,9 +77,20 @@ make: *** [all] Error 2
 
 increase the memory by adding swap space:
 
-dd if=/dev/zero of=/root/swap bs=1M count=512
-chmod 600 /root/swap
-mkswap /root/swap
-swapon /root/swap
+Write virtual swap disk
 
-try it again: make && make install
+`dd if=/dev/zero of=/root/swap bs=1M count=512`
+
+Set permissions
+
+`chmod 600 /root/swap`
+
+Setup swap
+
+`mkswap /root/swap`
+
+Activate swap
+
+`swapon /root/swap`
+
+try to compile again: `make && make install`
