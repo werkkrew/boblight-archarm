@@ -57,3 +57,29 @@ WantedBy=multi-user.target
 `systemctl start boblight`
 
 At this point the boblight daemon and all clients should be working.
+
+Troubleshooting
+---------------
+If you receive following error after executing make:
+
+g++: internal compiler error: Killed (program cc1plus)
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <https://github.com/archlinuxarm/PKGBUILDs/issues> for instructions.
+Makefile:533: recipe for target 'libboblight_la-boblight_client.lo' failed
+make[2]: *** [libboblight_la-boblight_client.lo] Error 1
+make[2]: Leaving directory '/root/boblight/boblight-archarm/src'
+Makefile:345: recipe for target 'all-recursive' failed
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory '/root/boblight/boblight-archarm'
+Makefile:254: recipe for target 'all' failed
+make: *** [all] Error 2
+
+increase the memory by adding swap space:
+
+dd if=/dev/zero of=/root/swap bs=1M count=512
+chmod 600 /root/swap
+mkswap /root/swap
+swapon /root/swap
+
+try it again: make && make install
